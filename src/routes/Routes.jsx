@@ -7,7 +7,6 @@ import HomeApps from '../components/HomeApps/HomeApps';
 import AllApps from '../pages/AllApps/AllApps';
 import Installation from '../pages/Installation/Installation';
 import ErrorPage from '../pages/ErrorPage/ErrorPage';
-import Searchbox from '../components/SearchBox/Searchbox';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,10 +23,6 @@ const router = createBrowserRouter([
   {
     path: '*',
     Component: ErrorPage,
-  },
-  {
-    path:'/search',
-    Component:Searchbox
   }
 ]);
 export default router;
