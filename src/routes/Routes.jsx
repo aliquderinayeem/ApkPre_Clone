@@ -10,16 +10,19 @@ import ErrorPage from '../pages/ErrorPage/ErrorPage';
 const router = createBrowserRouter([
   {
     path: "/",
-    Component:LandingPage,
-    children:[
-      {index:true,Component:HomeApps},
-      {path:'/apps',Component:AllApps},
-      {path:'/installation',Component:Installation}
+    Component: LandingPage,
+    children: [
+      {
+        index: true,
+        Component: HomeApps,
+      },
+      { path: '/apps', Component: AllApps },
+      { path: '/installation', Component: Installation }
     ]
   },
   {
-    path:'*',
-    Component:ErrorPage,
+    path: '*',
+    Component: ErrorPage,
   }
 ]);
 export default router;
