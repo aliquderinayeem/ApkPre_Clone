@@ -3,35 +3,35 @@ import React from 'react';
 const Footer = () => {
     return (
 <>
-    <footer className="footer bg-base-200 text-base-content p-10 border-1 border-green-600">
+    <footer className="footer bg-base-200 text-base-content p-1 md:p-10">
         <div className="footer sm:footer-horizontal bg-base-200 text-base-content p-10">
             <nav className='flex flex-col'>
-                <h6 className="footer-title text-lg md:text-xl font-bold text-[#632EE3]">Products</h6>
-                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200">Hero Apps</a>
-                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200">Components</a>
-                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200">Templates</a>
-                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200">Documentation</a>
+                <h6 className="footer-title text-lg md:text-xl font-extrabold text-[#632EE3]">Products</h6>
+                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200 font-semibold">Hero Apps</a>
+                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200 font-semibold">Components</a>
+                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200 font-semibold">Templates</a>
+                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200 font-semibold">Documentation</a>
             </nav>
             <nav className='flex flex-col'>
-                <h6 className="footer-title text-lg md:text-xl font-bold text-[#632EE3]">Company</h6>
-                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200">About us</a>
-                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200">Contact</a>
-                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200">Careers</a>
-                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200">Press kit</a>
+                <h6 className="footer-title text-lg md:text-xl font-extrabold text-[#632EE3]">Company</h6>
+                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200 font-semibold">About us</a>
+                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200 font-semibold">Contact</a>
+                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200 font-semibold">Careers</a>
+                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200 font-semibold">Press kit</a>
             </nav>
             <nav className='flex flex-col'>
-                <h6 className="footer-title text-lg md:text-xl font-bold text-[#632EE3]">Legal</h6>
-                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200">Terms of use</a>
-                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200">Privacy policy</a>
-                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200">Cookie policy</a>
-                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200">Licensing</a>
+                <h6 className="footer-title text-lg md:text-xl font-extrabold text-[#632EE3]">Legal</h6>
+                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200 font-semibold">Terms of use</a>
+                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200 font-semibold">Privacy policy</a>
+                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200 font-semibold">Cookie policy</a>
+                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200 font-semibold">Licensing</a>
             </nav>
             <nav className='flex flex-col'>
-                <h6 className="footer-title text-lg md:text-xl font-bold text-[#632EE3]">Community</h6>
-                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200">GitHub</a>
-                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200">Discord</a>
-                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200">Twitter</a>
-                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200">Blog</a>
+                <h6 className="footer-title text-lg md:text-xl font-extrabold text-[#632EE3]">Community</h6>
+                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200 font-semibold">GitHub</a>
+                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200 font-semibold">Discord</a>
+                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200 font-semibold">Twitter</a>
+                <a className="link link-hover text-base md:text-lg hover:text-[#9F62F2] transition-colors duration-200 font-semibold">Blog</a>
             </nav>
         </div>
     </footer>
@@ -39,11 +39,11 @@ const Footer = () => {
     <footer className="footer bg-base-200 text-base-content border-base-300 border-t px-10 py-6">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#632EE3] to-[#9F62F2] flex items-center justify-center shadow-lg">
+                <div className="w-10 h-10 rounded-full bg-linear-to-br from-[#632EE3] to-[#9F62F2] flex items-center justify-center shadow-lg">
                     <span className="text-white font-bold text-xl">H</span>
                 </div>
                 <div>
-                    <p className="font-bold text-2xl md:text-3xl bg-gradient-to-br from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent">
+                    <p className="font-bold text-2xl md:text-3xl bg-linear-to-br from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent">
                         HERO.IO
                     </p>
                     <p className="text-base md:text-lg">

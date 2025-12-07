@@ -6,7 +6,8 @@ import NoApps from '../../components/NoApps/NoApps';
 import Loader from '../../components/Loader/Loader';
 
 const AllApps =() => {
-    const { apps, loading, error } = useApps();
+    const { apps, loading} = useApps();
+    // console.log(apps);
     const [search, setSearch] = useState('');
     const key = search.trim().toLocaleLowerCase();
     const searchedapps = key ? apps.filter(app => app.title.toLocaleLowerCase().includes(key)) : apps;
@@ -29,7 +30,7 @@ const AllApps =() => {
                     <h1 className='text-center text-5xl sm:text-3xl md:text-4xl lg:text-[48px] font-bold'>
                         Our All Applications
                     </h1>
-                    <p className='text-center text-md sm:text-base md:text-lg lg:text-[20px] font-normal text-[#627382] mb-[20px]'>
+                    <p className='text-center text-md sm:text-base md:text-lg lg:text-[20px] font-normal text-[#627382] mb-5'>
                         Explore All Apps on the Market developed by us. We code for Millions
                     </p>
                 </div>

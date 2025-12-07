@@ -1,8 +1,17 @@
 import React from 'react';
+import useApps from '../../Hook/CustomHook';
+import Loader from '../../components/Loader/Loader';
 
 const Installation = () => {
+    const { loading, apps } = useApps();
+    console.log(apps)
+    if (loading) {
+        return (
+            <Loader></Loader>
+        )
+    }
     return (
-        <div className='p-[80px] border'>
+        <div className='p-20 border'>
             <title>HERO.IO-Installation</title>
             <link rel="icon" type="image/svg+xml" href="/assets/logo.png" />
             <div className='flex flex-col gap-3 sm:gap-4 md:gap-4'>

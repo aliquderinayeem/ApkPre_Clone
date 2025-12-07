@@ -4,11 +4,16 @@ import useApps from '../../Hook/CustomHook';
 import AppCard from '../AppCard/AppCard';
 import ShowAllButton from '../GithubButton/ShowAllButton/ShowAllButton';
 import { Link } from 'react-router';
+import Loader from '../Loader/Loader';
 
 const HomeApps = () => {
     const { apps, loading, error } = useApps();
     const Homeapps = apps.slice(0, 8);
-    
+    if (loading) {
+        return (
+            <Loader></Loader>
+        )
+    }
     return (
         <div>
             {/* {loading&&<h1>Loading.......</h1>} */}
@@ -31,9 +36,9 @@ const HomeApps = () => {
                         </div>
                     ))}
                 </div>
-            <Link to='/apps' className='flex items-center justify-center mt-[50px]'>
-                <ShowAllButton></ShowAllButton>
-            </Link>
+                <Link to='/apps' className='flex items-center justify-center mt-[50px]'>
+                    <ShowAllButton></ShowAllButton>
+                </Link>
             </div>
         </div>
     );

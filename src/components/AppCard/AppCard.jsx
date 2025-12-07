@@ -1,11 +1,17 @@
 import React from 'react';
 import downloadIcon from '../../../assets/icon-downloads.png';
 import IconRating from '../../../assets/icon-ratings.png';
+import { useNavigate } from 'react-router';
 const AppCard = ({ app }) => {
-    const {image,title,rating,downloads,}=app;
+    const {image,title,rating,downloads,id}=app;
     const modifiedDownload=downloads/1000000;
+    const navigate=useNavigate();
+    const gotoDetails=()=>{
+        // console.log(id);
+        navigate(`/apps/${id}`);
+    }
     return (
-        <div className='w-full h-full p-3 sm:p-4 md:p-4 hover:scale-104 transition ease-in-outs flex flex-col gap-3 sm:gap-4 md:gap-4 rounded-lg bg-white shadow-sm hover:shadow-md duration-300'>
+        <div onClick={gotoDetails} className='w-full h-full p-3 sm:p-4 md:p-4 hover:scale-104 transition ease-in-outs flex flex-col gap-3 sm:gap-4 md:gap-4 rounded-lg bg-white shadow-sm hover:shadow-md duration-300'>
             <div className='w-full h-[435px] overflow-hidden rounded-[15px]'>
                 <img 
                     src={image}

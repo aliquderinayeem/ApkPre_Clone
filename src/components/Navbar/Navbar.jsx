@@ -14,8 +14,8 @@ const Navbar = () => {
     //     textDecoration:none,
     // }
     return (
-        <div>
-            <div className="navbar bg-base-100 shadow-sm sticky top-0">
+        <nav className='sticky top-0 z-50 bg-white'>
+            <div className="navbar bg-base-100 shadow-sm">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn md:hidden border-none">
@@ -39,7 +39,7 @@ const Navbar = () => {
                     <GithubButton></GithubButton>
                 </a>
             </div>
-        </div>
+        </nav>
     );
 };
 

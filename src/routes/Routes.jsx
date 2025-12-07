@@ -19,7 +19,7 @@ const router = createBrowserRouter([
       },
       { path: '/apps', Component: AllApps },
       { path: '/installation', Component: Installation },
-      { path: '/apps/:id', Component: AppDetails }
+      { path: 'apps/:id', Component: AppDetails },
     ]
   },
   {

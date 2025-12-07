@@ -11,7 +11,7 @@ const Loader = () => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: 'white', // or your preferred background
+            background: 'linear-gradient(125.07deg, rgba(99, 46, 227, 1), rgba(159, 98, 242, 1) 100%)',
             zIndex: 9999
         }}>
             {/* You can keep your DaisyUI loading spinners or choose one */}
