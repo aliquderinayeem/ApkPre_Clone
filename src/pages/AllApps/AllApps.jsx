@@ -3,16 +3,27 @@ import useApps from '../../Hook/CustomHook';
 import { Link } from 'react-router';
 import AppCard from '../../components/AppCard/AppCard';
 import NoApps from '../../components/NoApps/NoApps';
+import Loader from '../../components/Loader/Loader';
 
-const AllApps = () => {
+const AllApps =() => {
     const { apps, loading, error } = useApps();
     const [search, setSearch] = useState('');
     const key = search.trim().toLocaleLowerCase();
-    // console.log(key)
     const searchedapps = key ? apps.filter(app => app.title.toLocaleLowerCase().includes(key)) : apps;
-    // console.log(searchedProducts)
+    
+
+
+    if (loading) {
+        return (
+            <Loader></Loader>
+        )
+    }
     return (
+
         <div>
+            {loading && <h1>Helloooooo/..............................</h1>}
+            <title>HERO.IO-All Apps</title>
+            <link rel="icon" type="image/svg+xml" href="/assets/logo.png" />
             <div className='px-4 sm:px-8 py-20 md:px-12 lg:p-20 bg-[#D9D9D9]/99'>
                 <div className='flex flex-col gap-3 sm:gap-4 md:gap-4'>
                     <h1 className='text-center text-5xl sm:text-3xl md:text-4xl lg:text-[48px] font-bold'>

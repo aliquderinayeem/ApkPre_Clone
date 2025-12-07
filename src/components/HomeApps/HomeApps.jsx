@@ -11,6 +11,9 @@ const HomeApps = () => {
     
     return (
         <div>
+            {/* {loading&&<h1>Loading.......</h1>} */}
+            <title>HERO.IO-Home</title>
+            <link rel="icon" type="image/svg+xml" href="/assets/logo.png" />
             <Hero></Hero>
             <div className='px-4 sm:px-8 py-20 md:px-12 lg:p-20 bg-[#D9D9D9]'>
                 <div className='flex flex-col gap-3 sm:gap-4 md:gap-4'>

@@ -3,6 +3,8 @@ import React from 'react';
 const Installation = () => {
     return (
         <div className='p-[80px] border'>
+            <title>HERO.IO-Installation</title>
+            <link rel="icon" type="image/svg+xml" href="/assets/logo.png" />
             <div className='flex flex-col gap-3 sm:gap-4 md:gap-4'>
                 <h1 className='text-center text-5xl sm:text-3xl md:text-4xl lg:text-[48px] font-bold'>
                     Your Installed Apps
