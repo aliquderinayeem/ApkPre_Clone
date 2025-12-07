@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import useApps from '../../Hook/CustomHook';
 import Loader from '../../components/Loader/Loader';
+import { getStoredApps } from '../../utility/LocalStorage';
+import InstallationCard from '../../components/InstallationCard/InstallationCard';
 
 const Installation = () => {
     const { loading, apps } = useApps();
-    console.log(apps)
+    const [installedApps, setInstalledApps] = useState([]);
+    useEffect(() => {
+        const storedApps = getStoredApps();
+        const ConvertedStoredApps = storedApps.map(id => parseInt(id));
+        const installedList = apps.filter(app => storedApps.includes(app.id))
+        setInstalledApps(installedList);
+    }, [apps])
     if (loading) {
         return (
             <Loader></Loader>
@@ -21,6 +29,9 @@ const Installation = () => {
                 <p className='text-center text-md sm:text-base md:text-lg lg:text-[20px] font-normal text-[#627382]'>
                     Explore All Trending Apps on the Market developed by us
                 </p>
+            </div>
+            <div>
+                {installedApps.map((SingleApp,index)=><InstallationCard key={index}  SingleApp={SingleApp}></InstallationCard>)}
             </div>
         </div>
     );

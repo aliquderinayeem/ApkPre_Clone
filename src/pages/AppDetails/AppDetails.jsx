@@ -17,7 +17,7 @@ const AppDetails = () => {
     const desiredApp=apps.find(app=>app.id==id.id);
     
     if(desiredApp!=undefined){
-        console.log(desiredApp)
+        // console.log(desiredApp)
     return (
         <div className='lg:m-20 bg-white rounded-2xl shadow-lg overflow-hidden'>
             <DetailsPageHeader desiredApp={desiredApp}></DetailsPageHeader>

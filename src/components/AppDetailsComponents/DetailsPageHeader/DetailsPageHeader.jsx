@@ -2,11 +2,12 @@ import React from 'react';
 import DownloadIcon from '../../../../assets/icon-downloads.png';
 import AvgRatingIcon from '../../../../assets/icon-ratings.png';
 import ReviewIcon from '../../../../assets/icon-review.png';
+import { addToStorage } from '../../../utility/LocalStorage';
 
 const DetailsPageHeader = ({ desiredApp }) => {
     if (!desiredApp) return null;
     
-    const { image, title, downloads, ratingAvg, reviews, companyName, size} = desiredApp;
+    const { image, title, downloads, ratingAvg, reviews, companyName, size,id} = desiredApp;
     
     
     const formatDownloads = (num) => {
@@ -19,12 +20,16 @@ const DetailsPageHeader = ({ desiredApp }) => {
         return num.toString();
     };
     
-   
+    
     const formatReviews = (num) => {
         if (num >= 1000) {
             return (num / 1000).toFixed(1).replace('.0', '') + 'K';
         }
         return num.toString();
+    };
+    const handleInstalledApps=id=>{
+        // console.log(id);
+        addToStorage(id);
     };
 
     return (
@@ -130,7 +135,7 @@ const DetailsPageHeader = ({ desiredApp }) => {
                     </div>
                     
                     
-                    <div className="mt-8">
+                    <div className="mt-8" onClick={()=>{handleInstalledApps(id)}}>
                         <button className="group relative w-full sm:w-auto flex items-center justify-center gap-3 bg-linear-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white text-lg md:text-xl font-semibold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                             <svg 
                                 className="w-6 h-6" 
@@ -146,7 +151,7 @@ const DetailsPageHeader = ({ desiredApp }) => {
                                 />
                             </svg>
                             <span>Install Now</span>
-                            <span className="text-blue-100">({size || '291 MB'})</span>
+                            <span className="text-blue-100">({size} MB)</span>
                             
                             
                             <div className="absolute inset-0 rounded-xl bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
