@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import useApps from '../../Hook/CustomHook';
 import { Link } from 'react-router';
 import AppCard from '../../components/AppCard/AppCard';
-import NoApps from '../../components/NoApps/NoApps';
 import Loader from '../../components/Loader/Loader';
+import NoApps3 from '../../components/NoApps/NoApps3';
 
 const AllApps =() => {
     const { apps, loading} = useApps();
@@ -72,7 +72,7 @@ const AllApps =() => {
                 </div>
                 {
                     (searchedapps.length === 0) ?
-                        <NoApps></NoApps>
+                        <NoApps3></NoApps3>
                         :
                         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 mt-6 sm:mt-8 md:mt-10 lg:mt-10'>
                             {searchedapps.map((app, index) => (
