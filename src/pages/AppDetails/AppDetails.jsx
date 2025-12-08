@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate, useParams } from 'react-router';
+import {  useParams } from 'react-router';
 import useApps from '../../Hook/CustomHook';
 import Loader from '../../components/Loader/Loader';
 import DetailsPageHeader from '../../components/AppDetailsComponents/DetailsPageHeader/DetailsPageHeader';
@@ -11,10 +11,7 @@ import BackButton from '../../components/GithubButton/BackButton/BackButton';
 const AppDetails = () => {
 
 
-    const navigate=useNavigate();
-    const handleBack=()=>{
-        navigate(-1);
-    }
+
     const id = useParams();
     // console.log(id.id);
     const { apps, loading } = useApps();
@@ -26,7 +23,7 @@ const AppDetails = () => {
         return (
             <>
                 <title>App_details</title>
-                <div className='flex pl-0 lg:ml-20 lg:mt-5 lg:mb-2' onClick={handleBack}>
+                <div className='flex pl-0 lg:ml-20 lg:mt-5 lg:mb-2'>
                     <BackButton></BackButton>
 
                 </div>

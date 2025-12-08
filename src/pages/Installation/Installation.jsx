@@ -4,6 +4,9 @@ import Loader from '../../components/Loader/Loader';
 import { getStoredApps } from '../../utility/LocalStorage';
 import InstallationCardHorizontal from '../../components/InstallationCard/InstallationCard';
 import { toast, ToastContainer } from 'react-toastify';
+import NoApps from '../../components/NoApps/NoApps';
+import NoApps2 from '../../components/NoApps/NoApps2';
+import BackButton from '../../components/GithubButton/BackButton/BackButton';
 
 const Installation = () => {
     const { loading, apps } = useApps();
@@ -67,6 +70,7 @@ const Installation = () => {
             <Loader></Loader>
         )
     }
+
     return (
         <>
             <div>
@@ -145,9 +149,18 @@ const Installation = () => {
                         </div>
                     </div>
                     {/* End */}
+                    {
+                    installedApps.length==0?
+                        <NoApps2></NoApps2>
+                    :<>
                     <div>
                         {installedApps.map((SingleApp, index) => <InstallationCardHorizontal key={index} SingleApp={SingleApp} handleDelete={handleDelete}></InstallationCardHorizontal>)}
                     </div>
+                <div className='flex mx-auto justify-center'>
+                    <BackButton></BackButton>
+                </div></>
+                    }
+                
                 </div>
             </div>
 
