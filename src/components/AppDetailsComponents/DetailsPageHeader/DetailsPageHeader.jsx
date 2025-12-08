@@ -8,17 +8,18 @@ import { toast, ToastContainer } from 'react-toastify';
 import { useState } from 'react';
 
 const DetailsPageHeader = ({ desiredApp }) => {
+    // console.log(desiredApp);
     const { image, title, downloads, ratingAvg, reviews, companyName, size, id } = desiredApp;
     const [status, setStatus] = useState("Install Now");
     const [isInstalled, setIsInstalled] = useState(false);
     const Id = getStoredApps();
-    console.log(Id);
+    // console.log(Id);
     useEffect(() => {
         if (Id.includes(id)) {
             setIsInstalled(true);
         }
     }, [Id,id]);
-    if (!desiredApp) {return null};
+    // if (!desiredApp) {return null};
 
 
 
@@ -151,7 +152,7 @@ const DetailsPageHeader = ({ desiredApp }) => {
 
 
                         <div className="mt-8" onClick={() => { handleInstalledApps(id) }}>
-                            <button className={`group relative w-full sm:w-auto flex items-center justify-center gap-3 ${!isInstalled ? `bg-linear-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white` : `bg-gray-300 text-black`} text-lg md:text-xl font-semibold py-4 px-8 rounded-xl ${!isInstalled ? `shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1` : ``}`} onClick={() => toast(`Installing ${title}`)} disabled={!isInstalled ? false : true}>
+                            <button className={`group relative w-full sm:w-auto flex items-center justify-center gap-3 ${!isInstalled ? `bg-linear-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white` : `bg-gray-300 text-black`} text-lg md:text-xl font-semibold py-4 px-8 rounded-xl ${!isInstalled ? `shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1` : ``}`} onClick={() => toast(`Installing ${title}`)} disabled={isInstalled||status!="Install Now"?true:false}>
                                 <svg
                                     className="w-6 h-6"
                                     fill="none"

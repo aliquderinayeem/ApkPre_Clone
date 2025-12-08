@@ -6,26 +6,35 @@ import DetailsPageHeader from '../../components/AppDetailsComponents/DetailsPage
 import DetailsDescription from '../../components/AppDetailsComponents/DetailsPageDescription/DetailsDescription';
 import BarChart1 from '../../components/AppDetailsComponents/BarChart/BarChart1';
 import BackButton from '../../components/GithubButton/BackButton/BackButton';
+import NoApps4 from '../../components/NoApps/NoApps4';
 
 
 const AppDetails = () => {
 
 
-    const navigate=useNavigate();
-    const handleBack=()=>{
+    const navigate = useNavigate();
+    const handleBack = () => {
         navigate(-1);
     }
     const id = useParams();
     // console.log(id.id);
     const { apps, loading } = useApps();
-    if (loading) return <Loader></Loader>
+
+
+
+    if (loading || apps.length === 0) {
+        return <Loader />;
+    }
     const desiredApp = apps.find(app => app.id == id.id);
 
-    if (desiredApp != undefined) {
+        if (!desiredApp) {
+        return <NoApps4></NoApps4>  // Don't return Loader!
+    }else{
         // console.log(desiredApp)
         return (
             <>
                 <div className='flex pl-0 lg:ml-20 lg:mt-5 lg:mb-2' onClick={handleBack}>
+                    <title>App_Details</title>
                     <BackButton></BackButton>
 
                 </div>
@@ -36,11 +45,6 @@ const AppDetails = () => {
                 </div>
             </>
         );
-    } else {
-        return (
-            <Loader></Loader>
-        )
-    }
-};
+    } }
 
 export default AppDetails;

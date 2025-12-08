@@ -21,7 +21,7 @@ const Installation = () => {
         setOriginalApps([...installedList]);
     }, [apps])
     const handleDelete = (id) => {
-        console.log(id);
+        // console.log(id);
         const storedIDs = getStoredApps();
         const remainingAppIDs = storedIDs.filter(ID => ID !== id);
         const modifiedIDs = JSON.stringify(remainingAppIDs)
