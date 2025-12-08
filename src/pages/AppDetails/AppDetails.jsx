@@ -25,6 +25,7 @@ const AppDetails = () => {
         // console.log(desiredApp)
         return (
             <>
+                <title>App_details</title>
                 <div className='flex pl-0 lg:ml-20 lg:mt-5 lg:mb-2' onClick={handleBack}>
                     <BackButton></BackButton>
 
