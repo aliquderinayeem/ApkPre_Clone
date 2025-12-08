@@ -4,6 +4,7 @@ import AvgRatingIcon from '../../../../assets/icon-ratings.png';
 import ReviewIcon from '../../../../assets/icon-review.png';
 import { addToStorage } from '../../../utility/LocalStorage';
 import GithubButton from '../../GithubButton/GithubButton';
+import { toast, ToastContainer } from 'react-toastify';
 
 const DetailsPageHeader = ({ desiredApp }) => {
     if (!desiredApp) return null;
@@ -37,6 +38,7 @@ const DetailsPageHeader = ({ desiredApp }) => {
         <>
 
         <div>
+            <ToastContainer></ToastContainer>
             <div className="flex flex-col lg:flex-row p-4 sm:p-6 md:p-8">
                 
                 
@@ -139,7 +141,7 @@ const DetailsPageHeader = ({ desiredApp }) => {
                     
                     
                     <div className="mt-8" onClick={()=>{handleInstalledApps(id)}}>
-                        <button className="group relative w-full sm:w-auto flex items-center justify-center gap-3 bg-linear-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white text-lg md:text-xl font-semibold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                        <button className="group relative w-full sm:w-auto flex items-center justify-center gap-3 bg-linear-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white text-lg md:text-xl font-semibold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1" onClick={()=>toast(`Installing ${title}`)}>
                             <svg 
                                 className="w-6 h-6" 
                                 fill="none" 

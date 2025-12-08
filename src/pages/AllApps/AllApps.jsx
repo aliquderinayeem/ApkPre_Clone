@@ -22,7 +22,6 @@ const AllApps =() => {
     return (
 
         <div>
-            {loading && <h1>Helloooooo/..............................</h1>}
             <title>HERO.IO-All Apps</title>
             <link rel="icon" type="image/svg+xml" href="/assets/logo.png" />
             <div className='px-4 sm:px-8 py-20 md:px-12 lg:p-20 bg-[#D9D9D9]/99'>
