@@ -3,6 +3,7 @@ import DownloadIcon from '../../../../assets/icon-downloads.png';
 import AvgRatingIcon from '../../../../assets/icon-ratings.png';
 import ReviewIcon from '../../../../assets/icon-review.png';
 import { addToStorage } from '../../../utility/LocalStorage';
+import GithubButton from '../../GithubButton/GithubButton';
 
 const DetailsPageHeader = ({ desiredApp }) => {
     if (!desiredApp) return null;
@@ -33,6 +34,8 @@ const DetailsPageHeader = ({ desiredApp }) => {
     };
 
     return (
+        <>
+
         <div>
             <div className="flex flex-col lg:flex-row p-4 sm:p-6 md:p-8">
                 
@@ -175,7 +178,7 @@ const DetailsPageHeader = ({ desiredApp }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div></>
     );
 };
 

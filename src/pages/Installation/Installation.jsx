@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import useApps from '../../Hook/CustomHook';
 import Loader from '../../components/Loader/Loader';
 import { getStoredApps } from '../../utility/LocalStorage';
-import InstallationCard from '../../components/InstallationCard/InstallationCard';
+import InstallationCardHorizontal from '../../components/InstallationCard/InstallationCard';
 
 const Installation = () => {
     const { loading, apps } = useApps();
@@ -13,6 +13,20 @@ const Installation = () => {
         const installedList = apps.filter(app => storedApps.includes(app.id))
         setInstalledApps(installedList);
     }, [apps])
+
+
+    const handleDelete=(id)=>{
+        console.log(id);
+        const storedIDs=getStoredApps();
+        const remainingAppIDs=storedIDs.filter(ID=>ID!==id);
+        const modifiedIDs=JSON.stringify(remainingAppIDs)
+        localStorage.setItem("appsList",modifiedIDs);
+        const newIDs=getStoredApps();
+        // console.log(newIDs)
+        const newList=apps.filter(app=>newIDs.includes(app.id))
+        setInstalledApps(newList);
+    };
+
     if (loading) {
         return (
             <Loader></Loader>
@@ -31,7 +45,10 @@ const Installation = () => {
                 </p>
             </div>
             <div>
-                {installedApps.map((SingleApp,index)=><InstallationCard key={index}  SingleApp={SingleApp}></InstallationCard>)}
+                <h1>{installedApps.length}</h1>
+            </div>
+            <div>
+                {installedApps.map((SingleApp, index) => <InstallationCardHorizontal key={index} SingleApp={SingleApp} handleDelete={handleDelete}></InstallationCardHorizontal>)}
             </div>
         </div>
     );
